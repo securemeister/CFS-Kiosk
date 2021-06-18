@@ -57,6 +57,7 @@ clear
 		echo "$(date): Starting presentation..."
 		birthcurrentpresentation=$(exiftool -b -ModifyDate $localpresentation)
 		libreoffice --norestore --show $localpresentation &
+		start_sleep
 	}
 
 	#Download presentation from URL with CURL to user's document folder (-s silent, -L follow redirects, -o output)
@@ -94,6 +95,10 @@ clear
 			echo "$(date): Latest presentation already running, nothing to do!"
 		fi
 	}
+	
+	function start_sleep () {
+		sleep $SleepSeconds
+	}
 
 #Main void
 #Endless loop, download presentation, check for new presentation, check if latest presentation is running, sleep for n seconds
@@ -102,5 +107,5 @@ do
 	download_presentation
 	check_latest_presentation_running
 	check_presentation_running
-	sleep $SleepSeconds
+	start_sleep
 done
