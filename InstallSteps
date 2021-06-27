@@ -29,5 +29,5 @@ sleep 15
 pptx="home/cfs/GoogleDrive/KioskTV/WODs/(date '+%w_%A').pptx
 libreoffice --norestore $pptx &
 
-https://www.techrepublic.com/article/how-to-mount-your-google-drive-on-linux-with-google-drive-ocamlfuse/
-https://thewayeye.net/posts/installing-raspotify-arm64/
+https://www.techrepublic.com/article/how-to-mount-your-google-drive-on-linux-with-google-drive-ocamlfuse
+https://thewayeye.net/posts/installing-raspotify-arm64
