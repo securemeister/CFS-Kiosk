@@ -20,6 +20,25 @@ sudo dpkg -i raspotify-latest.deb
 sudo nano /etc/default/raspotify
 BITRATE="320"
 
+#Troubleshooting
+Maybe you don't use the right audio output device. I managed to get my non-default USB audio device working by doing the following:
+
+List the audio devices on your raspberry.
+aplay -l
+Look for the identifyer numbers of your device. In my case, my USB device is card 1, device 0.
+The HDMI device for example is on card 0, device 1.
+
+Open the service configuration file of raspotify.
+sudo nano /lib/systemd/system/raspotify.service
+
+Add a parameter to the ExecStart command: --device hw:1,0 (where the first number is the card and the second is the device).
+
+Save, close, restart service.
+sudo systemctl daemon-reload
+sudo systemctl restart raspotify
+
+Done.
+
 #Mount Goolge drive
 sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt update && sudo apt install google-drive-ocamlfuse
