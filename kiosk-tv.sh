@@ -48,7 +48,7 @@ clear
 
 #Global variables
 	localpresentation="/home/$(whoami)/Documents/CFS_Box_News.pptx"
-	remotepresentation="https://www.dropbox.com/s/6s78jfgjt0deyjp/CFS_Box_News.pptx?dl=0"
+	remotepresentation="/home/$(whoami)/GoogleDrive/KioskTV/NewsTV/CFS_Box_News.pptx"
 	SleepSeconds=60
 
 #Functions
