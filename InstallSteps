@@ -1,0 +1,33 @@
+sudo nano /etc/default/apport
+sudo systemctl disable apport
+sudo apt purge apport
+
+sudo dpkg --add-architecture armhf
+sudo apt update
+wget https://dtcooper.github.io/raspotify/raspotify-latest.deb
+sudo apt install libasound2
+apt --fix-broken install
+sudo dpkg -i raspotify-latest.deb
+sudo nano /etc/default/raspotify
+BITRATE="320"
+
+
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt update && sudo apt install google-drive-ocamlfuse
+google-drive-ocamlfuse
+mkdir /home/cfs/GoogleDrive
+google-drive-ocamlfuse /home/cfs/GoogleDrive
+
+
+
+echo 'Executing updates...'
+sleep 3
+echo 'password' | sudo -S apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove && sudo apt-get -y autoclean
+sleep 5
+google-drive-ocamlfuse /home/cfs/GoogleDrive
+sleep 15
+pptx="home/cfs/GoogleDrive/KioskTV/WODs/(date '+%w_%A').pptx
+libreoffice --norestore $pptx &
+
+https://www.techrepublic.com/article/how-to-mount-your-google-drive-on-linux-with-google-drive-ocamlfuse/
+https://thewayeye.net/posts/installing-raspotify-arm64/
