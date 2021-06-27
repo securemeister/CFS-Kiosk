@@ -56,7 +56,7 @@ echo 'password' | sudo -S apt-get -y update && sudo apt-get -y upgrade && sudo a
 sleep 5
 google-drive-ocamlfuse /home/cfs/GoogleDrive
 sleep 15
-pptx="home/cfs/GoogleDrive/KioskTV/WODs/(date '+%w_%A').pptx
+pptx="/home/cfs/GoogleDrive/KioskTV/WODs/$(date '+%w_%A').pptx
 libreoffice --norestore $pptx &
 
 #Links
